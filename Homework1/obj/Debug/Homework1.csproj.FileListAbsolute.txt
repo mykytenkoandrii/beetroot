@@ -5,3 +5,10 @@ C:\Users\Andrii.Mykytenko\source\repos\Homework1\Homework1\obj\Debug\Homework1.c
 C:\Users\Andrii.Mykytenko\source\repos\Homework1\Homework1\obj\Debug\Homework1.csproj.CoreCompileInputs.cache
 C:\Users\Andrii.Mykytenko\source\repos\Homework1\Homework1\obj\Debug\Homework1.exe
 C:\Users\Andrii.Mykytenko\source\repos\Homework1\Homework1\obj\Debug\Homework1.pdb
+D:\beetroot\beetroot\Homework1\bin\Debug\Homework1.exe.config
+D:\beetroot\beetroot\Homework1\bin\Debug\Homework1.exe
+D:\beetroot\beetroot\Homework1\bin\Debug\Homework1.pdb
+D:\beetroot\beetroot\Homework1\obj\Debug\Homework1.csprojAssemblyReference.cache
+D:\beetroot\beetroot\Homework1\obj\Debug\Homework1.csproj.CoreCompileInputs.cache
+D:\beetroot\beetroot\Homework1\obj\Debug\Homework1.exe
+D:\beetroot\beetroot\Homework1\obj\Debug\Homework1.pdb
