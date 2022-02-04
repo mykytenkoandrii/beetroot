@@ -10,6 +10,7 @@ namespace Homework1
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+
     }
     class Program
     {
