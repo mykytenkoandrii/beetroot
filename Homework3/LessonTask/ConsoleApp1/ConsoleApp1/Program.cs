@@ -32,27 +32,28 @@ namespace Homework3
 				Console.WriteLine("Enter valid integer!: ");
 				return;
 			}
-			switch (i) {
-					case 1:
+			switch (i)
+			{
+				case 1:
 					Console.WriteLine(a + b);
 					break;
-					case 2:
+				case 2:
 					Console.WriteLine(a - b);
 					break;
-					case 3:
+				case 3:
 					Console.WriteLine(a * b);
 					break;
-					case 4:
+				case 4:
 					Console.WriteLine(a / b);
 					break;
-					default:
+				default:
 					Console.WriteLine("Enter number from 1..4");
 					break;
 			}
-			
+
 			Console.Read();
 		}
 
 
-    }
+	}
 }
