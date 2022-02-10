@@ -8,23 +8,28 @@ namespace Homework4
 		static void Main(string[] args)
 		{
 			UserInput user = new UserInput();
-			user.X = 5; //user.GetUserNumber();
-			user.Y = 0; //user.GetUserNumber();
-			user.Z = 0;         //Console.WriteLine(user.TrySumIfOdd(user.X, user.Y, out user.sum));
-			user.U = 0;
-			//UserInput.GetMaxValue(user.X, user.Y, user.Z, user.U);
+			user.X = user.GetUserNumber();
+			user.Y = user.GetUserNumber();
+			user.Z = user.GetUserNumber();
+			user.U = user.GetUserNumber();
+			UserInput.GetMaxValue(user.X, user.Y, user.Z, user.U);
+			UserInput.GetMinValue(user.X, user.Y, user.Z, user.U);
 			Console.WriteLine(user.TrySumIfOdd(user.X, user.Y, out user.sum));
+			user.userString = user.GetUserString();
+			user.Repeat(user.userString, user.X);
 			Console.Read();
 		}
 	}
 
 	class UserInput
 	{
-		public int X { get; set; }
-		public int Y { get; set; }
-		public int Z { get; set; }
-		public int U { get; set; }
+		public int X;
+		public int Y;
+		public int Z;
+		public int U;
 		public bool sum;
+		public string userString { get; set; }
+		//Method of getting number from user
 		public int GetUserNumber()
 		{
 			int userNum;
@@ -41,31 +46,33 @@ namespace Homework4
 			return userNum;
 		}
 
+		//Method of getting string from user
+		public string GetUserString()
+		{
+			string userInput;
+			Console.WriteLine("Hi, Booriachok! Enter some string: ");
+			userInput = Console.ReadLine();
+			return userInput;
+		}
+
+		//Methods for getting max value
 		public static int GetMaxValue(int X, int Y)
 			{
 			int maxPair;
 			maxPair = Math.Max(X, Y);
-			if (X == Y)
-			{
-				Console.WriteLine($"Numbers {X}, {Y} are equal!");
-				return maxPair;
-			}
 			Console.WriteLine($"Max number of {X}, {Y} is {maxPair}");
 			return maxPair;
 			}
+		
 		public static int GetMaxValue(int X, int Y, int Z) 
 		{
 			int maxPair;
 			maxPair = Math.Max(X, Y);
-			if (maxPair == Z) 
-			{
-				Console.WriteLine("Maximum numbers are equal!");
-				return maxPair;
-			}
 			maxPair = Math.Max(maxPair, Z);
 			Console.WriteLine($"Max number of {X}, {Y} and {Z} is {maxPair}");
 			return maxPair;
 		}
+
 		public static int GetMaxValue(int X, int Y, int Z, int U)
 		{
 			int maxPair1;
@@ -73,28 +80,49 @@ namespace Homework4
 			int maxPair;
 			maxPair1 = Math.Max(X, Y);
 			maxPair2 = Math.Max(Z, U);
-			if (maxPair1 == maxPair2)
-			{
-				Console.WriteLine("Maximum values are equal!");
-				return maxPair1;
-			}
 			maxPair = Math.Max(maxPair1, maxPair2);
 			Console.WriteLine($"Max number of {X}, {Y}, {Z} and {U} is {maxPair}");
 			return maxPair;
 		}
 
-		public int GetMinValue(int X, int Y)
+		//Methods for getting min value
+		public static int GetMinValue(int X, int Y)
 		{
-			return Math.Min(X, Y);
+			int minPair;
+			minPair = Math.Min(X, Y);
+			Console.WriteLine($"Min number of {X}, {Y} is {minPair}");
+			return minPair;
 		}
+
+		public static int GetMinValue(int X, int Y, int Z)
+		{
+			int minPair;
+			minPair = Math.Min(X, Y);
+			minPair = Math.Min(minPair, Z);
+			Console.WriteLine($"Min number of {X}, {Y} and {Z} is {minPair}");
+			return minPair;
+		}
+
+		public static int GetMinValue(int X, int Y, int Z, int U)
+		{
+			int minPair;
+			int minPair1;
+			int minPair2;
+			minPair1 = Math.Min(X, Y);
+			minPair2 = Math.Min(Z, U);
+			minPair = Math.Min(minPair1, minPair2);
+			Console.WriteLine($"Minimum number of {X}, {Y}, {Z} and {U} is {minPair}");
+			return minPair;
+		}
+
 		//Method TrySumIfOdd that accepts 2 parameters
 		//and returns true if sum of numbers between inputs is odd,
 		//otherwise false, sum return as out parameter
 		public bool TrySumIfOdd(int X, int Y, out bool sum) 
 		{
 			int minimal, maximum;
-			minimal = GetMinValue(X, Y);
-			maximum = GetMaxValue(X, Y);
+			minimal = Math.Min(X, Y);
+			maximum = Math.Max(X, Y);
 			int currentSum = 0;
 			if (X == Y)
 			{
@@ -104,7 +132,7 @@ namespace Homework4
 			}
 			else 
 			{
-				while (minimal != maximum)
+				while (minimal <= maximum)
 				{
 					currentSum += minimal;
 					minimal++;
@@ -120,6 +148,27 @@ namespace Homework4
 				return sum;
 			}
 
+		}
+
+		//Method Repeat that will accept string X and number N and
+		//return X repeated N times (e.g. Repeat(‘str’, 3) returns ‘strstrstr’ = ‘str’ three times)
+		public string Repeat(string X, int N) 
+		{
+			if (N <= 0) 
+			{
+				Console.WriteLine("Please, enter number > 0:");
+				N = GetUserNumber();
+				Repeat(X, N);
+				return "";
+			}
+			string repeatedString = "";
+			while (N > 0) 
+			{
+				repeatedString += X;
+				N--;
+			}
+			Console.WriteLine(repeatedString);
+			return repeatedString;
 		}
 	}
 }
