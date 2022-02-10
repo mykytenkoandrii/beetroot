@@ -3,7 +3,7 @@
 namespace lesson_4_methods
 {
 	internal class Program
-	{
+	{ //classwork
 		static void Main(string[] args)
 		{
 			Console.WriteLine(Factorial(5));

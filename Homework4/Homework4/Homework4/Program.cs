@@ -4,7 +4,7 @@ namespace Homework4
 {
 	class Program
 	{
-		
+		//Homework
 		static void Main(string[] args)
 		{
 			UserInput user = new UserInput();
