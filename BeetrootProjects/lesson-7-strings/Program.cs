@@ -28,7 +28,7 @@ namespace lesson_7_strings
 			var helloPlaceHolder = "Hello ";
 			var index = helloPlaceHolder.IndexOf(" ");
 
-			Console.WriteLine("Hello ".Insert(index + 1, name)); //true
+			Console.WriteLine("THIS IS HERE Hello ".Insert(index + 1, name)); //true
 			Console.WriteLine($"Hello {name}".Replace(name, hisName)); //true
 
 			Console.WriteLine(hello.PadLeft(40)); //true
